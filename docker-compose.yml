@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  address:
+    container_name: carpark
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=carpark
+      - POSTGRES_USER=Mardali
+      - POSTGRES_PASSWORD=Mardali
+    volumes:
+      - db:/var/lib/postgresql/carpark
+    ports:
+      - "5431:5431"
+    command: -p 5431
+volumes:
+  db:
